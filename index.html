@@ -38,22 +38,58 @@
                     Dolores rebum eirmod rebum eos nonumy eos consetetur labore sed sadipscing, kasd kasd magna stet lorem dolore lorem. Invidunt ut rebum et amet dolor. Sea dolores dolore kasd est voluptua..magna stet lorem dolore lorem. Invidunt ut rebum et amet dolor. Sea dolores dolore kasd est voluptua.
                  </p>   
                  <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                    <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                    <p class="tab-links" onclick="openTab('education')">Education</p>
                  </div>
-
-                 <div class="tab-contents">
+<!-- -----skill----- -->
+                 <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>FrontEnd Developer</span><br>Developing Frontend Web</li>
                         <li><span>FrontEnd</span><br>Developing Frontend Web</li>
                         <li><span>FrontEnd</span><br>Developing Frontend Web</li>
                     </ul>
                  </div>
+<!-- ----------Experience section----- -->
+                 <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2022-Current</span><br>Developing Frontend Web App</li>
+                        <li><span>FrontEnd</span><br>Developing Frontend Web</li>
+                        <li><span>FrontEnd</span><br>Developing Frontend Web</li>
+                    </ul>
+                 </div>
+<!-- ---------Education------- -->
+                 <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2023</span><br>MIT from IIT,JU</li>
+                        <li><span>2019</span><br>BSc Eng. in CSE from PUST</li>
+                        <li><span>2013</span><br>HSC from Ishwardi Women's College</li>
+                        <li><span>2011</span><br>SSC from Ikkshu Gawbeshana High School</li>
+                    </ul>
+                 </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        var tabLinks = document.getElementsByClassName("tab-links");
+        var tabContents = document.getElementsByClassName("tab-contents");
+
+
+        function openTab(tabName){
+            for(tabLink of tabLinks){
+                tabLink.classList.remove("active-link");
+            }
+            for(tabContent of tabContents){
+                tabContent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab");
+        }
+    </script>
     
 </body>
 </html>
